@@ -1,4 +1,12 @@
-#Mint跨平台动态模板框架
+---
+layout: post
+title: Mint技术总结
+categories: Android
+description: Mint相关技术介绍
+keywords: Dynamic, Cross Platform, Android
+---
+
+# Mint跨平台动态模板框架
 
 ## 解决的问题：
 
@@ -62,42 +70,42 @@
 
 Mint包括 Front End、JS Bridge、Native Runtime三部分。其中Front End提供了前端开发框架，处理Java层数据、接口的封装与解析。JS Bridge负责JS与Native的通信。Native Runtime负责模板解析、编译、渲染、以及Native端能力的提供。总体架构图如下所示：
 
-![](../images/posts/Mint_Whole_Framework.png)
+![](/images/posts/mint/Mint_Whole_Framework.png)
 
 对于一个前端模板的处理，Mint会将Html文件转换成Dom Tree结构，最终渲染成真正的View Tree。
 
-![](../images/posts/mint_layout_flow.png)
+![](/images/posts/mint/mint_layout_flow.png)
 
-![](../images/posts/MintTaskDataFlow.png)
+![](/images/posts/mint/MintTaskDataFlow.png)
 
 ### 2. JS Bridge通信技术方案
 
 Mint基于V8引擎与J2V8封装提供了JS层与Native层的无缝调用技术，实现了在JS层可以任意访问Native的对象与接口。其技术框架如下：
 
-![](../images/posts/mint_bridge_structure.png)
+![](/images/posts/mint/mint_bridge_structure.png)
 
 ### 3. 前端数据绑定方案
 
 Mint采用类似于Angular的数据绑定方案，使用`{{}}`标签实现数据绑定，但是对于标签的解析放于Native端处理，实现更优的性能。
 
-![](../images/posts/MVVM_Databinding.png)
+![](/images/posts/mint/MVVM_Databinding.png)
 
 ### 4. 线程模型
 
 Mint使用三线程模型，包括JS线程、Process线程、UI线程
 
-![](../images/posts/MintThreadModel.png)
+![](/images/posts/mint/MintThreadModel.png)
 
 ### 5. Render技术方案
 
 Mint采用异步布局+同步渲染的方案，其流程图如下：
 
-![](../images/posts/mint_pre_render_flow.png)
+![](/images/posts/mint/mint_pre_render_flow.png)
 
-![](../images/posts/mint_render_flow.png)
+![](/images/posts/mint/mint_render_flow.png)
 
 ### 6. UI Component组件技术方案
 
 Mint支持自定义UI组件扩展，UI组件设计方案如下：
 
-![](../images/posts/MintComponentStructure.png)
+![](/images/posts/mint/MintComponentStructure.png)
